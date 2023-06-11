@@ -1,28 +1,21 @@
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+function sendEmail() {
+  var params = {
+    BusID: document.getElementById("name").value,
+    Route: document.getElementById("email").value,
+    Reason: document.getElementById("message").value,
+  };
 
-let interval = null;
+  const serviceID = "";
+  const templateID = "";
 
-document.querySelector("span").onmouseover = event => {  
-  let iteration = 0;
-  
-  clearInterval(interval);
-  
-  interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
-      .split("")
-      .map((letter, index) => {
-        if(index < iteration) {
-          return event.target.dataset.value[index];
-        }
-      
-        return letters[Math.floor(Math.random() * 26)]
-      })
-      .join("");
-    
-    if(iteration >= event.target.dataset.value.length){ 
-      clearInterval(interval);
-    }
-    
-    iteration += 1 / 3;
-  }, 30);
+    emailjs.send(serviceID, templateID, params)
+    .then(res=>{
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+        console.log(res);
+        alert("Ваше сообщение было успешно отправлено.")
+
+    })
+    .catch(err=>console.log(err));
 }
