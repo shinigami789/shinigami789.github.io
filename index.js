@@ -1,12 +1,14 @@
+//require('dotenv').config()
+
 function sendEmail() {
   var params = {
-    BusID: document.getElementById("name").value,
-    Route: document.getElementById("email").value,
-    Reason: document.getElementById("message").value,
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
   };
 
-  const serviceID = "";
-  const templateID = "";
+  const serviceID = "proitivity.school";
+  const templateID = "template_sjrrjgp";
 
     emailjs.send(serviceID, templateID, params)
     .then(res=>{
