@@ -7,8 +7,8 @@ function sendEmail() {
     message: document.getElementById("message").value,
   };
 
-  const serviceID = "service_45odg1w";
-  const templateID = "template_r3hk75s";
+  const serviceID = "proitivity.school";
+  const templateID = "template_sjrrjgp";
 
     emailjs.send(serviceID, templateID, params, "lT37chRp-fah1SDc-")
     .then(res=>{
