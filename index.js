@@ -10,7 +10,7 @@ function sendEmail() {
   const serviceID = "service_45odg1w";
   const templateID = "template_r3hk75s";
 
-    emailjs.send(serviceID, templateID, params)
+    emailjs.send(serviceID, templateID, params, "lT37chRp-fah1SDc-")
     .then(res=>{
         document.getElementById("name").value = "";
         document.getElementById("email").value = "";
@@ -19,5 +19,5 @@ function sendEmail() {
         alert("Ваше сообщение было успешно отправлено.")
 
     })
-    .catch(err=>console.log(err));
+    .alert("Error");
 }
