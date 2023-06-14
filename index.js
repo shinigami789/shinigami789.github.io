@@ -10,7 +10,7 @@ function sendEmail() {
   const serviceID = "proitivity.school";
   const templateID = "template_sjrrjgp";
 
-    emailjs.send(serviceID, templateID, params, "lT37chRp-fah1SDc-")
+    emailjs.send(serviceID, templateID, params)
     .then(res=>{
         document.getElementById("name").value = "";
         document.getElementById("email").value = "";
