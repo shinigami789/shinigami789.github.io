@@ -19,5 +19,6 @@ function sendEmail() {
         alert("Ваше сообщение было успешно отправлено.")
 
     })
-    .alert("Error");
+    .catch(err=>console.log(err));
+
 }
